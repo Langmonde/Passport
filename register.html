@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Langmonde</title>
+	<link rel="stylesheet" href="css/auth.css">
+    <link rel="icon" href="img/favicon.ico" type="img/x-icon">
+	<script src="js/Bmob-2.2.4.min.js"></script>
+	<script>
+	Bmob.initialize("9da3bae4f7597ced", "666666");
+	Bmob.debug(true)
+	function register(){
+		let params = {
+		    username: document.getElementById("username").value,
+		    password: document.getElementById("pw").value,
+		    email: document.getElementById("mail").value,
+		}
+		Bmob.User.register(params).then(res => {
+		  location.href="index.html"
+		}).catch(err => {
+		 alert(err.error)
+		});
+	}
+	</script>
+</head>
+
+<body>
+	<div class="lowin lowin-blue">
+		<div class="lowin-brand">
+			<img src="img/logo.png" alt="logo">
+		</div>
+		<div class="lowin-wrapper">
+			<div class="lowin-box lowin-register">
+				<div class="lowin-box-inner">
+						<p>让我们创建您的帐户</p>
+						<div class="lowin-group">
+							<label>用户名</label>
+							<input type="text" name="name" id="username"autocomplete="name" class="lowin-input">
+						</div>
+						<div class="lowin-group">
+							<label>邮箱</label>
+							<input type="email" autocomplete="email" name="email" id="mail" class="lowin-input">
+						</div>
+						<div class="lowin-group">
+							<label>密码</label>
+							<input type="password" name="password" id="pw"autocomplete="current-password" class="lowin-input">
+						</div>
+						<button class="lowin-btn" onclick="register()">
+							注册
+						</button>
+
+						<div class="text-foot">
+							已有账户? <a href="index.html" class="login-link">登录</a>
+						</div>
+				</div>
+			</div>
+		</div>
+	
+		<footer class="lowin-footer">
+
+		</footer>
+	</div>
+
+</body>
+</html>
