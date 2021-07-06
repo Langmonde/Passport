@@ -13,7 +13,7 @@
 	Bmob.debug(true)
 	function login(){
 		   Bmob.User.login(document.getElementById("mail").value,document.getElementById("pw").value).then(res => {
-		   location.href="http://www.z-sms.com/"
+		   location.href="userpage.html"
 		 }).catch(err => {
 		  alert(err.error)
 		});
