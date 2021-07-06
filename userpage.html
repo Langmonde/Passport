@@ -1,17 +1,28 @@
+
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-		<script src="js/Bmob-2.2.4.min.js"></script>
-		<script>
-		Bmob.initialize("9da3bae4f7597ced", "666666");
-		Bmob.debug(true)
-		</script>
-	</head>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Langmonde</title>
+    <link rel="icon" href="img/favicon.ico" type="img/x-icon">
+	<script src="js/Bmob-2.2.4.min.js"></script>
+	<script> 
+	Bmob.initialize("9da3bae4f7597ced", "666666");
+	Bmob.debug(true)
+	function GetloginInfo(){
+		let user = Bmob.User.current();
+		var spanTag= document.getElementById("info")
+		spanTag.innerHTML= user.username;	
+	}
+	</script>
+
+</head>
 	<body>
-		<span id="username">
-			
+	<span id="info"></span>
+			<button onclick="GetloginInfo()">
+				GetloginUserInfo
+			</button>
 		</span>
 	</body>
 </html>
